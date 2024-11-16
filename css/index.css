@@ -1,0 +1,244 @@
+@charset "utf-8";
+/* CSS Document */
+
+* { margin:0; padding:0; list-style-image: none;list-style-type: none;}
+html{background-color:#090808;background-size:cover;background-attachment:fixed;background-repeat:no-repeat;background-position:center center;overflow:-Scroll;overflow-x:hidden}
+html,body{width:100%;height:100%;margin:0;padding:0}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center;background-repeat:no-repeat;background-attachment:fixed;background-size:cover}
+h1{margin:0;font-family:"bls";text-align:center;color:#fff;text-shadow:2px 2px 4px #000000}
+h1 i{display:inline-block;vertical-align:middle;width:35vmax;height:16vmax;background-image:url(../images/logo.svg);background-size:cover}
+
+
+/*自定义滚动条*/
+::-webkit-scrollbar{width: 12px;height: 12px;background-color: #000000;}/*滚动条高宽及背景*/
+::-webkit-scrollbar-track{background-color: #000000;} /*定义滚动条轨道*/
+::-webkit-scrollbar-thumb{background-color: #FFFFFF;}/*滑块*/
+::-webkit-scrollbar-thumb:hover{background-color:#EEEEEE}/*滑块触发*/
+::-webkit-scrollbar-corner{background-color: #333333;}/*边角，即两个滚动条的交汇处*/
+
+img { border:none;}
+.fix {clear:both;font-size: 0px;}
+/*顶部导航*/
+.top{display:flex;align-items:center;justify-content:space-between;position:fixed;top:0;left:0;width:100%;height:100px;background-image:linear-gradient(to top, rgba(0, 0, 0, 0), rgb(229 31 26 / 0%)));z-index:1000}
+.nav_logo {float: left;padding-left: 30px;}
+.nav_logo a {text-decoration: none;display: block;height: 40px;width: 46px;background-image: url(../images/nav/web_logo.svg);background-size: auto 40px;background-repeat: no-repeat;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);transform: rotate(0deg);background-position: left;opacity:0.50;}
+.nav_logo a:hover {width: 121px;opacity:1;}
+.nav {display: flex;justify-content: space-between;float: right;width: 101px;padding-right: 30px;}
+.nav_dhrs {float: right;}
+.nav_dhrs a {text-decoration:none;display: block;height: 28px;width: 28px;background-image: url(../images/nav/nav_book.svg);background-repeat: no-repeat;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg);opacity:0.50;}
+.nav_dhrs a:hover {opacity:1;}
+.nav_design {float: right;}
+.nav_design a {text-decoration:none;display: block;height: 28px;width: 28px;background-image: url(../images/nav/nav_design.svg);background-repeat: no-repeat;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg);opacity:0.50;}
+.nav_design a:hover {opacity:1;}
+
+/* 标题动画 */
+@-webkit-keyframes title {
+	0% {opacity: 0;-webkit-transform: translateX(30px);}	
+	100% {opacity: 1;-webkit-transform: translateX(0);}
+}
+@keyframes title {
+	0% {opacity: 0;transform: translateX(30px);}	
+	100% {opacity: 1;transform: translateX(0);}
+} 
+.nr {
+	position: fixed;
+	bottom: 11%;
+	z-index: 100;
+	left: 4%;
+	font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 14px;
+	color: #fff;
+	-webkit-animation:'title' 1.5s 1;
+	overflow:hidden;
+}
+.copyright {
+	position: fixed;
+	bottom: 6%;
+	z-index: 100;
+	left: 4%;
+}
+.copyright dd.logo {
+	float: left;
+	padding-right: 20px;
+}
+.copyright dd.logo a {
+	text-decoration:none;
+	display: block;
+	height: 20px;
+	width: 120px;
+	background-image: url(../images/yangr_logo.svg);
+	background-repeat: no-repeat;
+	-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg);
+	opacity:0.50;
+}
+.copyright dd.logo a:hover {
+	-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg);
+	opacity:1;
+}
+.copyright dd.b {
+	height: 20px;
+	float: left;
+	font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+}
+.copyright dd.b a {
+	text-decoration:none;
+	color: #fff;
+	-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);transform:rotate(0deg);
+	opacity:0.50;
+}
+.copyright dd.b a:hover {
+	text-decoration: none;
+	opacity:1;
+}
+
+/* 上滑手势动画 */
+@-webkit-keyframes tips-up {
+	0% {opacity: 0;-webkit-transform: translateY(0px);}
+	50% {opacity: 1;-webkit-transform: translateY(-40px);}
+	100% {opacity: 0;-webkit-transform: translateY(-80px);}
+}
+@keyframes tips-up {
+	0% {opacity: 0;transform: translateY(0px);}
+	50% {opacity: 1;transform: translateY(-40px);}
+	100% {opacity: 0;transform: translateY(-80px);}
+} 
+.tips-up {background-image: url(../images/tips-up-pc.svg);background-repeat: no-repeat;position: absolute;z-index: 200;bottom: 40px;opacity:0;left: 50%;width: 80px;height: 20px;margin-left: -40px;-webkit-animation:'tips-up' 2s 3;animation-timing-function:linear;}
+
+.copyright3 {
+	position: absolute;
+	bottom: 0px;
+	z-index: 200;
+	width: 100%;
+}
+
+.copyright4 {
+	margin-right: auto;
+	margin-left: auto;
+	width: 89%;
+	padding-top: 50px;
+	padding-bottom: 60px;
+}
+
+.copyright4 dd.b {
+	font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+	font-size: 14px;
+	line-height: 36px;
+	color: #FFF;
+	width: 100%;
+	text-align: left;
+}
+.copyright4 dd.b a {
+	text-decoration:none;
+	color: #FFFFFF;
+}
+.copyright4 dd.b a:hover {
+	text-decoration: none;
+	color: #CCCCCC;
+}
+.copyright4 dd.b img{
+	width: 240px;
+	margin-bottom: 15px;
+	border-radius: 0px;
+}
+
+.vis {
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	top: 0px;
+	text-align: center;
+	background: rgba(0,0,0,0.7);
+    -webkit-backdrop-filter: saturate(200%) blur(30px);
+    backdrop-filter: saturate(200%) blur(30px);
+	border-radius: 15px 15px 0 0;
+}
+.vis_2{
+	width: 93%;
+	padding-right: 3.5%;
+	padding-left: 3.5%;
+}
+
+.vis_2 img{
+	width: 46%;
+	margin-top: 5%;
+	margin-right: 2%;
+	margin-left: 2%;
+	border-radius: 10px;
+}
+.lj_yangr {
+	display: none;
+	padding-top: 10px;
+	padding-bottom: 25px;
+	width: 89%;
+	margin-right: auto;
+	margin-left: auto;
+}
+.lj_yangr a {
+	font-family: PingFangSC-Light;
+	display: block;
+	height: 44px;
+	border-radius: 22px;
+	background: -webkit-linear-gradient(left,#ffd71f 0,#ffc800 100%);
+	background: linear-gradient(to right,##ffd71f 0,#ffc800 100%);
+	font-size: 14px;
+	line-height: 44px;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	box-shadow: 0 10px 10px rgba(0,0,0,.10);
+}
+.m_bj {
+	display: none;
+	width: 100%;
+	height: auto;
+	top: 0px;
+	bottom: 0px;
+	position: fixed;
+	background-image: url(../images/m_bj.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+@media screen and (max-width: 600px) {
+::-webkit-scrollbar {display: none;}
+.top {height: 70px;}
+.nav {width: 90px;padding-right: 6%;}
+.nav_logo {padding-left: 6%;}
+.nav_logo a {height: 30px;width: 34px;background-size: auto 30px;}
+.nav_logo a:hover {width: 34px;}
+.nav_design a {height: 24px;width: 24px;}
+.nav_dhrs a {height: 24px;width: 24px;}
+.nr {left: 6%;right: 6%;bottom: 7%;font-size: 16px;line-height: 26px;font-family: PingFangSC-Light;}
+.container {display: none;}
+.copyright {left: 6%;bottom: 4%;}
+.copyright dd.logo {display: none;}
+.copyright dd.b {font-size: 10px;font-family: PingFangSC-Light;}
+.vis_2{
+	padding-top: 20px;
+}
+.vis_2 img{width: 96%;}
+.tips-up {background-image: url(../images/tips-up-pc.svg);width: 40px;margin-left: -20px;bottom: 70px;}
+.copyright4 {
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+.copyright4 dd.b {
+	font-family: PingFangSC-Light;
+	font-size: 10px;
+	line-height: 25px;
+}
+.copyright4 dd.b img {
+    width: 160px;
+    margin-bottom: 10px;
+}
+.lj_yangr {
+	display: block;
+}
+.m_bj {
+	display: block;
+}
+}
